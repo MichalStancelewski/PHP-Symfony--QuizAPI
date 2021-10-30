@@ -4,9 +4,17 @@ namespace App\Entity;
 
 use App\Repository\QuestionRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=QuestionRepository::class)
+ * @ApiResource(
+ *     collectionOperations={"get"={"normalization_context"={"groups"="question:list"}}},
+ *     itemOperations={"get"={"normalization_context"={"groups"="question:item"}}},
+ *     order={"id"="DESC"},
+ *     paginationEnabled=false
+ *     )
  */
 class Question
 {
@@ -15,41 +23,49 @@ class Question
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
+    #[Groups(['question:list', 'question:item'])]
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+    #[Groups(['question:list', 'question:item'])]
     private $category;
 
     /**
      * @ORM\Column(type="text")
      */
+    #[Groups(['question:list', 'question:item'])]
     private $question_text;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+    #[Groups(['question:list', 'question:item'])]
     private $answer_correct;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+    #[Groups(['question:list', 'question:item'])]
     private $answer_bad_1;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+    #[Groups(['question:list', 'question:item'])]
     private $answer_bad_2;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+    #[Groups(['question:list', 'question:item'])]
     private $answer_bad_3;
 
     /**
      * @ORM\Column(type="integer")
      */
+    #[Groups(['question:list', 'question:item'])]
     private $difficulty;
 
     public function getId(): ?int
