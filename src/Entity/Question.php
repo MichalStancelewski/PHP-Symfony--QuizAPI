@@ -6,13 +6,37 @@ use App\Repository\QuestionRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Controller\GetRandomQuestionController;
 
 /**
  * @ORM\Entity(repositoryClass=QuestionRepository::class)
  * @ApiResource(
- *     collectionOperations={"get"={"normalization_context"={"groups"="question:list"}}},
- *     itemOperations={"get"={"normalization_context"={"groups"="question:item"}}},
- *     order={"id"="DESC"},
+ *     collectionOperations={
+ *          "get_all"={
+ *              "method" = "GET",
+ *              "path" = "/all",
+ *              "normalization_context"={
+ *                  "groups"="question:list"
+ *              }
+ *          },
+ *          "get_random"={
+ *              "method" = "GET",
+ *              "path" = "/random",
+ *              "controller" = GetRandomQuestionController::class
+ *          }
+ *     },
+ *     itemOperations={
+ *          "get_by_id"={
+ *              "method" = "GET",
+ *              "path" = "/single/{id}",
+ *              "normalization_context"={
+ *                  "groups"="question:item"
+ *              }
+ *          }
+ *     },
+ *     order={
+ *          "id"="DESC"
+ *     },
  *     paginationEnabled=false
  *     )
  */

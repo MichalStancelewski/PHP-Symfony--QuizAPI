@@ -47,4 +47,21 @@ class QuestionRepository extends ServiceEntityRepository
         ;
     }
     */
+/*
+    public function getRandom()
+    {
+        $id_limits = $this->createQueryBuilder('entity')
+            ->select('MIN(entity.id)', 'MAX(entity.id)')
+            ->getQuery()
+            ->getOneOrNullResult();
+        $random_possible_id = rand($id_limits[1], $id_limits[2]);
+
+        return $this->createQueryBuilder('entity')
+            ->where('entity.id >= :random_id')
+            ->setParameter('random_id', $random_possible_id)
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+*/
 }
