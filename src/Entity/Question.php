@@ -22,7 +22,10 @@ use App\Controller\GetRandomQuestionController;
  *          "get_random"={
  *              "method" = "GET",
  *              "path" = "/random",
- *              "controller" = GetRandomQuestionController::class
+ *              "controller" = GetRandomQuestionController::class,
+ *              "normalization_context"={
+ *                  "groups"="question:list"
+ *              }
  *          }
  *     },
  *     itemOperations={
