@@ -26,6 +26,15 @@ use App\Controller\GetRandomQuestionController;
  *              "normalization_context"={
  *                  "groups"="question:list"
  *              }
+ *          },
+ *          "get_random"={
+ *              "method" = "POST",
+ *              "path" = "/random",
+ *              "read" = false,
+ *              "controller" = GetRandomQuestionController::class,
+ *              "normalization_context"={
+ *                  "groups"="question:list"
+ *              }
  *          }
  *     },
  *     itemOperations={

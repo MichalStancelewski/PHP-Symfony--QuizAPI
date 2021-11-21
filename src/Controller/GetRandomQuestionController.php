@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Repository\QuestionRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\AsController;
 
 #[AsController]
@@ -17,11 +19,29 @@ class GetRandomQuestionController extends AbstractController
 
     }
 
-    public function __invoke(): array
+    public function __invoke(Request $request): array
     {
+        $requestData = json_decode($request->getContent(), true);
+        $numberOfQuestions = $requestData["number"];
+        $randomQuestions = array();
+
         $allQuestions = $this->questionRepository->findAll();
-        $oneRandomQuestion = [$allQuestions[array_rand($allQuestions,1)] ];
-        return $oneRandomQuestion;
+
+        if(count($allQuestions) < $numberOfQuestions){
+            $response = new Response();
+            $response->setStatusCode(501);
+            return ["ERROR. MAXIMUM NUMBER OF UNIQUE QUESTIONS IS: " . count($allQuestions)];
+        }
+
+        for ($i = 0; $i < $numberOfQuestions; $i++){
+            $selectedQuestion = $allQuestions[array_rand($allQuestions)];
+            if(!in_array($selectedQuestion, $randomQuestions)) {
+                array_push($randomQuestions, $selectedQuestion);
+            } else {
+                $i--;
+            }
+        }
+        return $randomQuestions;
     }
 
 }
