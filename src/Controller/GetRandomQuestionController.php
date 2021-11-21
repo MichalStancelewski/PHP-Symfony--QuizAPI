@@ -28,8 +28,6 @@ class GetRandomQuestionController extends AbstractController
         $allQuestions = $this->questionRepository->findAll();
 
         if(count($allQuestions) < $numberOfQuestions){
-            $response = new Response();
-            $response->setStatusCode(501);
             return ["ERROR. MAXIMUM NUMBER OF UNIQUE QUESTIONS IS: " . count($allQuestions)];
         }
 
