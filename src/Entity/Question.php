@@ -72,31 +72,31 @@ class Question
      * @ORM\Column(type="text")
      */
     #[Groups(['question:list', 'question:item'])]
-    private $question_text;
+    private $questionText;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     #[Groups(['question:list', 'question:item'])]
-    private $answer_correct;
+    private $answerCorrect;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     #[Groups(['question:list', 'question:item'])]
-    private $answer_bad_1;
+    private $answerBad1;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     #[Groups(['question:list', 'question:item'])]
-    private $answer_bad_2;
+    private $answerBad2;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     #[Groups(['question:list', 'question:item'])]
-    private $answer_bad_3;
+    private $answerBad3;
 
     /**
      * @ORM\Column(type="integer")
@@ -123,60 +123,60 @@ class Question
 
     public function getQuestionText(): ?string
     {
-        return $this->question_text;
+        return $this->questionText;
     }
 
-    public function setQuestionText(string $question_text): self
+    public function setQuestionText(string $questionText): self
     {
-        $this->question_text = $question_text;
+        $this->questionText = $questionText;
 
         return $this;
     }
 
     public function getAnswerCorrect(): ?string
     {
-        return $this->answer_correct;
+        return $this->answerCorrect;
     }
 
-    public function setAnswerCorrect(string $answer_correct): self
+    public function setAnswerCorrect(string $answerCorrect): self
     {
-        $this->answer_correct = $answer_correct;
+        $this->answerCorrect = $answerCorrect;
 
         return $this;
     }
 
     public function getAnswerBad1(): ?string
     {
-        return $this->answer_bad_1;
+        return $this->answerBad1;
     }
 
-    public function setAnswerBad1(string $answer_bad_1): self
+    public function setAnswerBad1(string $answerBad1): self
     {
-        $this->answer_bad_1 = $answer_bad_1;
+        $this->answerBad1 = $answerBad1;
 
         return $this;
     }
 
     public function getAnswerBad2(): ?string
     {
-        return $this->answer_bad_2;
+        return $this->answerBad2;
     }
 
-    public function setAnswerBad2(string $answer_bad_2): self
+    public function setAnswerBad2(string $answerBad2): self
     {
-        $this->answer_bad_2 = $answer_bad_2;
+        $this->answerBad2 = $answerBad2;
 
         return $this;
     }
 
     public function getAnswerBad3(): ?string
     {
-        return $this->answer_bad_3;
+        return $this->answerBad3;
     }
 
-    public function setAnswerBad3(string $answer_bad_3): self
+    public function setAnswerBad3(string $answerBad3): self
     {
-        $this->answer_bad_3 = $answer_bad_3;
+        $this->answerBad3 = $answerBad3;
 
         return $this;
     }
