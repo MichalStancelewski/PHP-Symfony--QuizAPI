@@ -28,8 +28,8 @@ use App\Controller\GetRandomQuestionController;
  *              }
  *          },
  *          "get_random"={
- *              "method" = "POST",
- *              "path" = "/random",
+ *              "method" = "GET",
+ *              "path" = "/random/{number}",
  *              "read" = false,
  *              "controller" = GetRandomQuestionController::class,
  *              "normalization_context"={

@@ -16,19 +16,19 @@ class GetRandomQuestionController extends AbstractController
     public function __construct(QuestionRepository $questionRepository)
     {
         $this->questionRepository = $questionRepository;
-
     }
 
     public function __invoke(Request $request): array
     {
-        $requestData = json_decode($request->getContent(), true);
-        $numberOfQuestions = $requestData["number"];
         $randomQuestions = array();
-
+        $numberOfQuestions = $request->get('number');
         $allQuestions = $this->questionRepository->findAll();
 
+        if(!is_numeric($numberOfQuestions) || $numberOfQuestions <= 0){
+            return ["ERROR. REQUESTED A PARAMETER WITH VALUE BETWEEN 1 AND " . count($allQuestions) . "."];
+        }
         if(count($allQuestions) < $numberOfQuestions){
-            return ["ERROR. MAXIMUM NUMBER OF UNIQUE QUESTIONS IS: " . count($allQuestions)];
+            return ["ERROR. MAXIMUM NUMBER OF UNIQUE QUESTIONS IS: " . count($allQuestions) . "."];
         }
 
         for ($i = 0; $i < $numberOfQuestions; $i++){
