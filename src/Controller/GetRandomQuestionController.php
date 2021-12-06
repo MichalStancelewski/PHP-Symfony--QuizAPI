@@ -42,9 +42,9 @@ class GetRandomQuestionController extends AbstractController
             }
         }
 
-        $randomQuestions = $this->get('serializer')->serialize($randomQuestions, 'json');
+        $randomQuestionsSerialized = $this->get('serializer')->serialize($randomQuestions, 'json');
 
-        return new JsonResponse($randomQuestions, 200, [],true);
+        return new JsonResponse($randomQuestionsSerialized , 200, [],true);
     }
 
 }
