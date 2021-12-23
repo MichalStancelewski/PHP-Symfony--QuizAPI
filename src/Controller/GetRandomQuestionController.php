@@ -6,9 +6,7 @@ use App\Repository\QuestionRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\AsController;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
 
 #[AsController]
 class GetRandomQuestionController extends AbstractController

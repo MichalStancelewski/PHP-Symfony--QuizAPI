@@ -1,14 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello IndexController!{% endblock %}
+{% block title %}Quiz API{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="./css/style.css"/>
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div id="page-container" class="">
+        <header>
+            <div id="top-bar" class="">
+            </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-</div>
+            <div id="title-bar" class="">
+                <h1>Welcome in QUIZ API!</h1>
+            </div>
+        </header>
+        <div class="main" >
+            <div class="main-left-column" >
+                <h2>What iz QUIZ API?</h2>
+                <p>QUIZ API is a free database of quiz questions from many different categories. Each item consists of question and 4 answers: 1 correct and 3 incorrect.</p>
+                <p>API provides an access to presented GET requests. The data is returned as JSON-LD.</p>
+                <p>QUIZ API is made for development and educational purposes.</p>
+            </div>
+            <div class="main-right-column" >
+                <h2>Available requests</h2>
+
+                <div class="method-container">
+                    <p><span class="method-type">GET</span> <span class="method-url">/api/all</span></p>
+                    <p><span class="method-description">Receive all records from database.</span></p>
+                </div>
+
+                <div class="method-container">
+                    <p><span class="method-type">GET</span> <span class="method-url">/api/single/{id}</span></p>
+                    <p><span class="method-description">Receive specific single question by its ID.</span></p>
+                </div>
+
+                <div class="method-container">
+                    <p><span class="method-type">GET</span> <span class="method-url">/api/random/{number}</span></p>
+                    <p><span class="method-description">Receive a specific number of randomly chosen questions.</span></p>
+                </div>
+
+            </div>
+        </div>
+        <footer>
+            <div id="footer-bar">
+                <p> Made by Michał Stancelewski from <a href="https://stancelewski.pl/">stancelewski.pl</a></p>
+            </div>
+        </footer>
+    </div>
 {% endblock %}
