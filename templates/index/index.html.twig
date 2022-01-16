@@ -33,7 +33,7 @@
                     <p class="example-url">
                         <input type="text" value="{{ app.request.uri }}api/random/3" id="example-1" class="method-url-example" disabled/>
                         <span class="tooltip">
-                            <button class="button-copy" onclick="myFunction('example-1', 'tooltip-1')">
+                            <button class="button-copy" onclick="myFunction('example-1', 'tooltip-1')" onmouseout="outFunc()">
                                 <span class="tooltiptext" id="tooltip-1">Copy to clipboard</span>
                                 Copy
                             </button>
@@ -47,7 +47,7 @@
                     <p class="example-url">
                         <input type="text" value="{{ app.request.uri }}api/all" id="example-2" class="method-url-example" disabled/>
                         <span class="tooltip method-url-example-button">
-                            <button class="button-copy" onclick="myFunction('example-2', 'tooltip-2')">
+                            <button class="button-copy" onclick="myFunction('example-2', 'tooltip-2')" onmouseout="outFunc()">
                                 <span class="tooltiptext" id="tooltip-2">Copy to clipboard</span>
                                 Copy
                             </button>
@@ -61,7 +61,7 @@
                     <p class="example-url">
                         <input type="text" value="{{ app.request.uri }}api/single/1" id="example-3" class="method-url-example" disabled/>
                         <span class="tooltip">
-                            <button class="button-copy" onclick="myFunction('example-3', 'tooltip-3')">
+                            <button class="button-copy" onclick="myFunction('example-3', 'tooltip-3')" onmouseout="outFunc()">
                                 <span class="tooltiptext" id="tooltip-3">Copy to clipboard</span>
                                 Copy
                             </button>
