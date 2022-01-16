@@ -20,25 +20,28 @@
             <div class="main-left-column" >
                 <h2>What iz QUIZ API?</h2>
                 <p>QUIZ API is a free database of quiz questions from many different categories. Each item consists of question and 4 answers: 1 correct and 3 incorrect.</p>
-                <p>API provides an access to presented GET requests. The data is returned as JSON-LD.</p>
+                <p>API provides an access to presented GET requests. The data is returned as JSON object.</p>
                 <p>QUIZ API is made for development and educational purposes.</p>
             </div>
             <div class="main-right-column" >
                 <h2>Available requests</h2>
 
                 <div class="method-container">
+                    <p><span class="method-type">GET</span> <span class="method-url">/api/random/{number}</span></p>
+                    <p><span class="method-description">Receive a specific number of randomly chosen questions.</span></p>
+                    <p><span class="method-url-example">{{ app.request.uri }}api/random/3</span></p>
+                </div>
+
+                <div class="method-container">
                     <p><span class="method-type">GET</span> <span class="method-url">/api/all</span></p>
                     <p><span class="method-description">Receive all records from database.</span></p>
+                    <p><span class="method-url-example">{{ app.request.uri }}api/all</span></p>
                 </div>
 
                 <div class="method-container">
                     <p><span class="method-type">GET</span> <span class="method-url">/api/single/{id}</span></p>
                     <p><span class="method-description">Receive specific single question by its ID.</span></p>
-                </div>
-
-                <div class="method-container">
-                    <p><span class="method-type">GET</span> <span class="method-url">/api/random/{number}</span></p>
-                    <p><span class="method-description">Receive a specific number of randomly chosen questions.</span></p>
+                    <p><span class="method-url-example">{{ app.request.uri }}api/single/1</span></p>
                 </div>
 
             </div>
