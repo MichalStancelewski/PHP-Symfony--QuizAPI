@@ -116,6 +116,71 @@ h2{
     color: #ccdd11;
 }
 
+.example-url{
+    padding-top: 8px;
+}
+.example-url input[type="text"]{
+    width: 70%;
+    background-color: #16313C;
+    border: 0;
+    border-radius: 3px;
+    padding: 4px 8px;
+    color: #8a8a8a;
+    font-size: 12px;
+}
+
+.button-copy{
+    border-radius: 3px;
+    background-color: #aabb11;
+    border: 0;
+    cursor: pointer;
+    padding: 3px 10px;
+}
+
+.button-copy:hover{
+    background-color: #ccdd11;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #ccdd11;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 0%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0px 0px 5px #4a4a4a;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ccdd11 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
 @media only screen and (max-width: 768px) {
     h1 {
         font-size: 24px;
@@ -143,5 +208,11 @@ h2{
         margin-top: 20px;
         padding: 10px 0;
         border-top: 1px solid #26313c;
+    }
+
+    .tooltip .tooltiptext {
+        width: 80px;
+        left: 0;
+        margin-left: -30px;
     }
 }

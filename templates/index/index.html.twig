@@ -29,19 +29,43 @@
                 <div class="method-container">
                     <p><span class="method-type">GET</span> <span class="method-url">/api/random/{number}</span></p>
                     <p><span class="method-description">Receive a specific number of randomly chosen questions.</span></p>
-                    <p><span class="method-url-example">{{ app.request.uri }}api/random/3</span></p>
+                    <p class="example-url">
+                        <input type="text" value="{{ app.request.uri }}api/random/3" id="example-1" class="method-url-example" disabled/>
+                        <span class="tooltip">
+                            <button class="button-copy" onclick="myFunction('example-1', 'tooltip-1')">
+                                <span class="tooltiptext" id="tooltip-1">Copy to clipboard</span>
+                                Copy
+                            </button>
+                        </span>
+                    </p>
                 </div>
 
                 <div class="method-container">
                     <p><span class="method-type">GET</span> <span class="method-url">/api/all</span></p>
                     <p><span class="method-description">Receive all records from database.</span></p>
-                    <p><span class="method-url-example">{{ app.request.uri }}api/all</span></p>
+                    <p class="example-url">
+                        <input type="text" value="{{ app.request.uri }}api/all" id="example-2" class="method-url-example" disabled/>
+                        <span class="tooltip method-url-example-button">
+                            <button class="button-copy" onclick="myFunction('example-2', 'tooltip-2')">
+                                <span class="tooltiptext" id="tooltip-2">Copy to clipboard</span>
+                                Copy
+                            </button>
+                        </span>
+                    </p>
                 </div>
 
                 <div class="method-container">
                     <p><span class="method-type">GET</span> <span class="method-url">/api/single/{id}</span></p>
                     <p><span class="method-description">Receive specific single question by its ID.</span></p>
-                    <p><span class="method-url-example">{{ app.request.uri }}api/single/1</span></p>
+                    <p class="example-url">
+                        <input type="text" value="{{ app.request.uri }}api/single/1" id="example-3" class="method-url-example" disabled/>
+                        <span class="tooltip">
+                            <button class="button-copy" onclick="myFunction('example-3', 'tooltip-3')">
+                                <span class="tooltiptext" id="tooltip-3">Copy to clipboard</span>
+                                Copy
+                            </button>
+                        </span>
+                    </p>
                 </div>
 
             </div>
@@ -52,4 +76,8 @@
             </div>
         </footer>
     </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" src="./js/CopyToClipboard.js"></script>
+
 {% endblock %}
